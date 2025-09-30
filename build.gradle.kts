@@ -1,6 +1,5 @@
 import org.jetbrains.changelog.Changelog
 import org.jetbrains.changelog.markdownToHTML
-import org.jetbrains.intellij.platform.gradle.IntelliJPlatformType
 
 fun properties(key: String) = providers.gradleProperty(key)
 fun environment(key: String) = providers.environmentVariable(key)
@@ -97,10 +96,6 @@ intellijPlatform {
         ides {
             // recommended tests across multiple versions of IntelliJ IDEA Community.
             recommended()
-
-            // ide(...) is deprecated, but I cannot figure out how to use 'useInstaller = false' with create(...)
-            @Suppress("DEPRECATION")
-            ide(IntelliJPlatformType.Rider, "2025.1.5", useInstaller = false)
         }
     }
 }
