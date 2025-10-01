@@ -6,3 +6,4 @@ build
 /.kotlin
 *.pem
 *.crt
+.DS_Store
