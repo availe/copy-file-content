@@ -2,7 +2,7 @@
 <idea-plugin>
     <version>0.1.4</version>
 
-    <id>com.github.mwguerra.copyfilecontent</id>
+    <id>io.availe.copyfilecontentx</id>
     <depends>com.intellij.modules.platform</depends>
 
     <name>Copy File Content</name>
@@ -36,24 +36,24 @@
     </change-notes>
 
     <extensions defaultExtensionNs="com.intellij">
-        <notificationGroup id="Copy File Content" displayType="BALLOON" isLogByDefault="true" />
+        <notificationGroup id="Copy File Content" displayType="BALLOON" isLogByDefault="true"/>
 
         <projectConfigurable
-            id="CopyFileContentConfigurable"
-            displayName="Copy File Content Settings"
-            instance="com.github.mwguerra.copyfilecontent.CopyFileContentConfigurable"/>
+                id="CopyFileContentConfigurable"
+                displayName="Copy File Content Settings"
+                instance="io.availe.copyfilecontentx.CopyFileContentConfigurable"/>
     </extensions>
     <actions>
         <!-- For general IntelliJ IDEs -->
         <action id="CopyFileContentContentsAction"
-                class="com.github.mwguerra.copyfilecontent.CopyFileContentAction"
+                class="io.availe.copyfilecontentx.CopyFileContentAction"
                 text="Copy File Content to Clipboard"
                 description="Copy folder and file content to the clipboard.">
             <add-to-group group-id="CutCopyPasteGroup" anchor="after" relative-to-action="CopyPaths"/>
             <add-to-group group-id="ChangesViewPopupMenu" anchor="last"/>
         </action>
         <action id="CopyAllOpenTabsAction"
-                class="com.github.mwguerra.copyfilecontent.CopyAllOpenTabsAction"
+                class="io.availe.copyfilecontentx.CopyAllOpenTabsAction"
                 text="Copy All Open Tabs Content to Clipboard"
                 description="Copy the content of all open editor tabs to the clipboard.">
             <add-to-group group-id="EditorTabPopupMenu" anchor="after" relative-to-action="CopyPaths"/>
@@ -61,7 +61,7 @@
 
         <!-- For Rider -->
         <action id="CopyFileContentContentsActionRider"
-                class="com.github.mwguerra.copyfilecontent.CopyFileContentAction"
+                class="io.availe.copyfilecontentx.CopyFileContentAction"
                 text="Copy File Content to Clipboard"
                 description="Copy folder and file content to the clipboard.">
             <add-to-group group-id="CopyReferencePopupGroup" anchor="after" relative-to-action="CopyPaths"/>

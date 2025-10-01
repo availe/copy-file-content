@@ -1,5 +1,5 @@
 // file: src/main/kotlin/com/github/mwguerra/copyfilecontent/CopyFileContentAction.kt
-package com.github.mwguerra.copyfilecontent
+package io.availe.copyfilecontentx
 
 import com.intellij.notification.NotificationAction
 import com.intellij.notification.NotificationGroupManager
@@ -112,7 +112,13 @@ class CopyFileContentAction : AnAction() {
         return words.size + punctuation
     }
 
-    private fun processFile(file: VirtualFile, fileContents: MutableList<String>, copiedFilePaths: MutableSet<String>, project: Project, addExtraLine: Boolean): String {
+    private fun processFile(
+        file: VirtualFile,
+        fileContents: MutableList<String>,
+        copiedFilePaths: MutableSet<String>,
+        project: Project,
+        addExtraLine: Boolean
+    ): String {
         val settings = CopyFileContentSettings.getInstance(project) ?: return ""
         val repositoryRoot = getRepositoryRoot(project)
         val fileRelativePath = repositoryRoot?.let { root -> VfsUtil.getRelativePath(file, root, '/') } ?: file.path
@@ -152,7 +158,13 @@ class CopyFileContentAction : AnAction() {
         return content
     }
 
-    private fun processDirectory(directory: VirtualFile, fileContents: MutableList<String>, copiedFilePaths: MutableSet<String>, project: Project, addExtraLine: Boolean): String {
+    private fun processDirectory(
+        directory: VirtualFile,
+        fileContents: MutableList<String>,
+        copiedFilePaths: MutableSet<String>,
+        project: Project,
+        addExtraLine: Boolean
+    ): String {
         val directoryContent = StringBuilder()
         val settings = CopyFileContentSettings.getInstance(project) ?: return ""
 
@@ -211,7 +223,11 @@ class CopyFileContentAction : AnAction() {
         }
     }
 
-    private fun showNotificationWithSettingsAction(message: String, notificationType: NotificationType, project: Project?) {
+    private fun showNotificationWithSettingsAction(
+        message: String,
+        notificationType: NotificationType,
+        project: Project?
+    ) {
         val notificationGroup = NotificationGroupManager.getInstance().getNotificationGroup("Copy File Content")
         val notification = notificationGroup.createNotification(message, notificationType).setImportant(true)
         notification.addAction(NotificationAction.createSimple("Go to Settings") {

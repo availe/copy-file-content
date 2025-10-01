@@ -1,18 +1,23 @@
-package com.github.mwguerra.copyfilecontent
+package io.availe.copyfilecontentx
 
 import com.intellij.openapi.options.Configurable
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.ui.Messages
 import com.intellij.ui.IdeBorderFactory
 import com.intellij.ui.JBColor
-import com.intellij.ui.components.*
+import com.intellij.ui.RoundedLineBorder
+import com.intellij.ui.components.JBCheckBox
+import com.intellij.ui.components.JBScrollPane
+import com.intellij.ui.components.JBTextArea
+import com.intellij.ui.components.JBTextField
 import com.intellij.ui.table.JBTable
 import com.intellij.util.ui.FormBuilder
 import com.intellij.util.ui.JBUI
-import java.awt.*
+import java.awt.BorderLayout
+import java.awt.Dimension
+import java.awt.FlowLayout
 import javax.swing.*
 import javax.swing.table.DefaultTableModel
-import com.intellij.ui.RoundedLineBorder
 
 class CopyFileContentConfigurable(private val project: Project) : Configurable {
     private var settings: CopyFileContentSettings? = null
@@ -42,16 +47,17 @@ class CopyFileContentConfigurable(private val project: Project) : Configurable {
     private val extraLineCheckBox = JBCheckBox("Add an extra line between files")
     private val setMaxFilesCheckBox = JBCheckBox("Set maximum number of files to have their content copied")
     private val maxFilesField = JBTextField(10)
-    private val warningLabel = JLabel("<html><b>Warning:</b> Not setting a maximum number of files may cause high memory usage.</html>").apply {
-        foreground = JBColor(0xA94442, 0xA94442)
-        background = JBColor(0xF2DEDE, 0xF2DEDE)
-        border = JBUI.Borders.compound(
-            JBUI.Borders.empty(5),
-            BorderFactory.createLineBorder(JBColor(0xEBCCD1, 0xEBCCD1))
-        )
-        isOpaque = true
-        isVisible = false
-    }
+    private val warningLabel =
+        JLabel("<html><b>Warning:</b> Not setting a maximum number of files may cause high memory usage.</html>").apply {
+            foreground = JBColor(0xA94442, 0xA94442)
+            background = JBColor(0xF2DEDE, 0xF2DEDE)
+            border = JBUI.Borders.compound(
+                JBUI.Borders.empty(5),
+                BorderFactory.createLineBorder(JBColor(0xEBCCD1, 0xEBCCD1))
+            )
+            isOpaque = true
+            isVisible = false
+        }
     private val infoLabel = JLabel("<html><b>Info:</b> Please add file extensions to the table above.</html>").apply {
         foreground = JBColor(0x31708F, 0x31708F)
         background = JBColor(0xD9EDF7, 0xD9EDF7)

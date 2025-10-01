@@ -1,4 +1,4 @@
-package com.github.mwguerra.copyfilecontent
+package io.availe.copyfilecontentx
 
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
