@@ -5,11 +5,12 @@
     <id>io.availe.copyfilecontentx</id>
     <depends>com.intellij.modules.platform</depends>
 
-    <name>Copy File Content</name>
-    <vendor email="mwguerra@gmail.com" url="https://mwguerra.com">Marcelo W. Guerra</vendor>
+    <name>Copy File ContentX</name>
+    <vendor email="rafael.diaz@availe.io">Rafael Diaz</vendor>
 
     <!-- https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html -->
     <description><![CDATA[
+    <p>Attribution: This plugin is a fork of the original <a href="https://github.com/mwguerra/copy-file-content">Copy File Content</a></p>
     <p>The "Copy File Content" plugin enhances your workflow by allowing you to quickly copy the contents of selected files and directories to the clipboard, formatted according to customizable settings.</p>
     <h2>This plugin is useful for:</h2>
     <ul>
