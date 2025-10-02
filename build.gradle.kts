@@ -31,6 +31,7 @@ dependencies {
         val platformType = properties("platformType")
         val platformVersion = properties("platformVersion")
         create(platformType, platformVersion)
+        bundledModule("intellij.platform.vcs.impl")
     }
 }
 

@@ -4,6 +4,7 @@
 
     <id>io.availe.copyfilecontentx</id>
     <depends>com.intellij.modules.platform</depends>
+    <depends optional="true" config-file="vcs-actions.xml">com.intellij.modules.vcs</depends>
 
     <name>Copy File ContentX</name>
     <vendor email="rafael.diaz@availe.io">Rafael Diaz</vendor>
@@ -51,7 +52,6 @@
                 text="Copy File Content to Clipboard"
                 description="Copy folder and file content to the clipboard.">
             <add-to-group group-id="CutCopyPasteGroup" anchor="after" relative-to-action="CopyPaths"/>
-            <add-to-group group-id="ChangesViewPopupMenu" anchor="last"/>
         </action>
         <action id="CopyAllOpenTabsAction"
                 class="io.availe.copyfilecontentx.CopyAllOpenTabsAction"
